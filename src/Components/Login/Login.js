@@ -1,6 +1,9 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import { AuthContext } from '../Contexts/Context';
 
 const Login = () => {
+
+  const {signIn} = useContext(AuthContext);
 
 
 const handleSubmit  =   (e) => {
