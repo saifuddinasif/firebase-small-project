@@ -4,7 +4,17 @@ import { AuthContext } from './../Contexts/Context';
 
 const Header = () => {
 
-    const {user} =useContext(AuthContext)
+
+    const   handleSignOut = () => {
+          logout()
+
+          .then(() => {})
+          .catch(error => console.log(error))
+        
+
+    }
+ 
+    const {user, logout} =useContext(AuthContext)
 
     console.log('context',user);
     return (
@@ -21,7 +31,7 @@ const Header = () => {
 
                       {user?.email && <span>Welcome  {user.email}</span>}
 
-                      <button className="btn btn-accent">Sign Out</button>
+                      <button onClick={handleSignOut} className="btn btn-accent">Sign Out</button>
 
                      
             </div>
