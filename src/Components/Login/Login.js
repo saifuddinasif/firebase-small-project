@@ -16,7 +16,18 @@ const handleSubmit  =   (e) => {
 
    const password = form.password.value;
 
-   console.log(email,password);
+   signIn(email,password) 
+
+   .then(result => {
+    const user = result.user;
+
+    form.reset()
+   })
+   .catch(error => console.error(error));
+
+
+
+
 
 
 }
