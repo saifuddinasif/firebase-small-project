@@ -1,9 +1,12 @@
 import React,{useContext} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Contexts/Context';
 
 const Login = () => {
 
   const {signIn} = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
 
 const handleSubmit  =   (e) => {
@@ -22,6 +25,7 @@ const handleSubmit  =   (e) => {
     const user = result.user;
 
     form.reset()
+    navigate('/')
    })
    .catch(error => console.error(error));
 

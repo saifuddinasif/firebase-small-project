@@ -10,8 +10,10 @@ const Context = ({children}) => {
 
 const auth = getAuth(app)
 
-const [user,setUser] = useState({displayName : 'Aakash'})
+const [user,setUser] = useState(true)
 
+
+const [loading, setLoading] = useState(true)
 
 const createUser = (email, password) => {
 
@@ -42,6 +44,8 @@ const createUser = (email, password) => {
    const unsubscribe =onAuthStateChanged(auth, currentUser => {
 
             setUser(currentUser );
+
+            setLoading(false)
             console.log('auth state changd', currentUser);
         })
 
@@ -55,7 +59,7 @@ const createUser = (email, password) => {
 
 
 
-    const authInfo = { user,createUser, logout,  SignInWithGoogle,  signIn} 
+    const authInfo = { user,createUser, logout,  SignInWithGoogle,loading,  signIn} 
 
     return (
         <div>
