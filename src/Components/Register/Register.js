@@ -5,9 +5,9 @@ import { AuthContext } from '../Contexts/Context';
 const Register = () => {
 
 
- 
-
   const {createUser, SignInWithGoogle} =useContext(AuthContext)
+
+  console.log('first', createUser)
     const handleSubmit  =   (e) => {
 
         e.preventDefault();
@@ -78,7 +78,7 @@ const Register = () => {
               </label>
               <input type="password"  name="password" placeholder="password" className="input input-bordered"  required />
               <label className="label">
-                <Link href="#" className="label-text-alt link link-hover">Already Have A Account </Link>
+                <Link to='/login' className="label-text-alt link link-hover text-2xl text-green-500">Already Have A Account </Link>
               </label>
             </div>
             <div className="form-control mt-6">

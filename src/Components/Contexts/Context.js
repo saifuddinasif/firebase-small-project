@@ -3,20 +3,21 @@ import app from './../Firebase/Firebase';
 import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateCurrentUser} from 'firebase/auth'
 
  export  const AuthContext = createContext();
+
+
+ 
 const Context = ({children}) => {
-
-
-
 
 const auth = getAuth(app)
 
-const [user,setUser] = useState(true)
 
+
+const [user,setUser] = useState(true)
 
 const [loading, setLoading] = useState(true)
 
 const createUser = (email, password) => {
-
+    
     return createUserWithEmailAndPassword(auth,email,password)
 }
 
